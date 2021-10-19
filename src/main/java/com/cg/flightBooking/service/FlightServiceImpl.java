@@ -56,11 +56,8 @@ public class FlightServiceImpl implements FlightService {
 		}
 		else
 			throw new RecordNotFoundException("Flight with number: " + flightNumber + " not exists");
-	    }
-		/*catch(RecordNotFoundException e)
-		{
-			return new ResponseEntity(e.getMessage(),HttpStatus.NOT_FOUND);
-		}*/
+	}
+
 
 	/*
 	 * modify a flight

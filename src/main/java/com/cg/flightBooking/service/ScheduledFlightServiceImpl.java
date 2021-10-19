@@ -62,27 +62,10 @@ public class ScheduledFlightServiceImpl implements ScheduledFlightService {
 		if (!scheduleFlight.isPresent())
 			throw new RecordNotFoundException("Enter a valid Flight Id");
 		else {
-			// try {
-			// cancelBookings(flightId);
-			// } catch (RecordNotFoundException e) {
-			// System.out.println("No Bookings Found");
-			// }
 			dao.deleteById(flightId);
 		}
 		return "Scheduled flight with ID " + flightId + " is not found";
 	}
-
-	// @Override
-	// public boolean cancelBookings(BigInteger flightId) throws
-	// RecordNotFoundException {
-	// Iterable<Booking> bookingList = bookingService.displayAllBooking();
-	// for (Booking booking : bookingList) {
-	// if (booking.getScheduleFlight().getScheduleFlightId().equals(flightId)) {
-	// bookingService.deleteBooking(booking.getBookingId());
-	// }
-	// }
-	// return true;
-	// }
 
 	/*
 	 * Service method to view all Scheduled flights in database
